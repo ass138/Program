@@ -1,0 +1,92 @@
+[
+    {
+        "title": "Rufus",
+        "description": "Утилита для создания загрузочных USB-накопителей из ISO-образов",
+        "link": "https://github.com/pbatard/rufus/releases/download/v4.7/rufus-4.7.exe"
+    },
+    {
+        "title": "7-Zip",
+        "description": "Бесплатный архиватор с поддержкой множества форматов, включая 7z, ZIP и RAR",
+        "link": "https://www.7-zip.org/a/7z2409-x64.exe"
+    },
+    {
+        "title": "Google Chrome",
+        "description": "Быстрый и безопасный веб-браузер от Google с поддержкой расширений",
+        "link": "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7B69DDFD09-4F25-B676-9BC7-1C99FA32FFEE%7D%26lang%3Dru%26browser%3D4%26usagestats%3D1%26appname%3DGoogle%2520Chrome%26needsadmin%3Dprefers%26ap%3Dx64-statsdef_1%26installdataindex%3Dempty/update2/installers/ChromeSetup.exe"
+    },
+    {
+        "title": "FileZilla",
+        "description": "Бесплатный FTP-клиент для загрузки и скачивания файлов с серверов",
+        "link": "https://filezilla.ru/download/FileZilla_3.67.0_win64-setup.exe"
+    },
+    {
+        "title": "Adobe Photoshop (torrent)",
+        "description": "Профессиональный графический редактор для обработки изображений",
+        "link": "https://stoigr.org/uploads/download/Adobe-Photoshop-2025.torrent"
+    },
+    {
+        "title": "Visual Studio",
+        "description": "Мощная IDE от Microsoft для разработки приложений на C++, C#, .NET и других языках",
+        "link": "https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=professional&channel=Release&version=VS2022&source=VSLandingPage&cid=2030:93b5e1cbbed04340b63cbda6e2eca231"
+    },
+    {
+        "title": "VS Code",
+        "description": "Легкий и настраиваемый редактор кода с поддержкой расширений и отладки",
+        "link": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user"
+    },
+    {
+        "title": "Notepad++",
+        "description": "Быстрый текстовый редактор с поддержкой подсветки синтаксиса и макросов",
+        "link": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v8.8.1/npp.8.8.1.Installer.arm64.exe"
+    },
+    {
+        "title": "Python",
+        "description": "Интерпретатор языка программирования Python для разработки и запуска скриптов",
+        "link": "https://www.python.org/ftp/python/3.13.3/python-3.13.3-amd64.exe"
+    },
+    {
+        "title": "Microsoft Office (torrent)",
+        "description": "Пакет офисных приложений от Microsoft: Word, Excel, PowerPoint и др.",
+        "link": "https://stoigr.org/uploads/download/Microsoft-Office-2019.torrent"
+    },
+    {
+        "title": "Driver Booster",
+        "description": "Утилита для автоматического обновления драйверов на компьютере",
+        "link": "https://store.iobit.com/affiliate.php?ACCOUNT=LOBIT&AFFILIATE=3995&PATH=https://cdn.iobit.com/dl/driver_booster_setup.exe"
+    },
+    {
+        "title": "Steam",
+        "description": "Цифровая платформа для покупки, загрузки и запуска видеоигр",
+        "link": "https://cdn.fastly.steamstatic.com/client/installer/SteamSetup.exe"
+    },
+    {
+        "title": "Epic Games Launcher",
+        "description": "Платформа для загрузки игр и приложений от Epic Games, включая Fortnite",
+        "link": "https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi"
+    },
+    {
+        "title": "Discord",
+        "description": "Популярный мессенджер для голосового, видео- и текстового общения, особенно в геймерской среде",
+        "link": "https://discord.com/api/downloads/distributions/app/installers/latest?channel=stable&platform=win&arch=x64"
+    },
+    {
+        "title": "Telegram Desktop",
+        "description": "Настольная версия мессенджера Telegram с поддержкой облачного хранения",
+        "link": "https://telegram.org/dl/desktop/win64"
+    },
+    {
+        "title": "WhatsApp Desktop",
+        "description": "Официальный клиент WhatsApp для компьютера с поддержкой синхронизации с телефоном",
+        "link": "https://apps.microsoft.com/detail/9nksqgp7f2nh?hl=en-US&gl=US"
+    },
+    {
+        "title": "WinDirStat",
+        "description": "Инструмент для визуализации использования дискового пространства",
+        "link": "https://github.com/windirstat/windirstat/releases/download/release%2Fv2.2.2/WinDirStat-x64.msi"
+    },
+    {
+        "title": "uTorrent",
+        "description": "Клиент для загрузки файлов по протоколу BitTorrent",
+        "link": "https://download-hr.utorrent.com/track/stable/endpoint/utorrent/os/riserollout?filename=utorrent_installer.exe"
+    }
+]

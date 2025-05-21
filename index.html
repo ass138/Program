@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Список программ</title>
+  <style>
+    :root {
+      --bg-color: #f0f2f5;
+      --card-bg: #fff;
+      --text-color: #333;
+      --accent-color: #007BFF;
+      --accent-hover: #0056b3;
+      --border-radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #18191a;
+        --card-bg: #242526;
+        --text-color: #e4e6eb;
+        --accent-color: #2e89ff;
+        --accent-hover: #1877f2;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-bar input {
+      padding: 12px 20px;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: var(--border-radius);
+      font-size: 16px;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+
+    .search-bar input:focus {
+      box-shadow: 0 0 5px var(--accent-color);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: var(--text-color);
+    }
+
+    .card p {
+      flex-grow: 1;
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    .card a {
+      align-self: flex-start;
+      padding: 10px 16px;
+      background-color: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    .card a:hover {
+      background-color: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+  <h1>Список программ</h1>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="🔍 Поиск программ..." />
+  </div>
+
+  <div class="container" id="programs">
+    <!-- Программы будут загружены сюда -->
+  </div>
+
+  <script>
+    async function loadPrograms() {
+      try {
+        const response = await fetch('programs.json');
+        const programs = await response.json();
+        renderPrograms(programs);
+      } catch (error) {
+        console.error('Ошибка загрузки данных:', error);
+        document.getElementById('programs').innerHTML = '<p>Не удалось загрузить список программ.</p>';
+      }
+    }
+
+    function renderPrograms(programs) {
+      const container = document.getElementById('programs');
+      container.innerHTML = '';
+
+      if (programs.length === 0) {
+        container.innerHTML = '<p>Ничего не найдено.</p>';
+        return;
+      }
+
+      programs.forEach(program => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h2>${program.title}</h2>
+          <p>${program.description}</p>
+          <a href="${program.link}" target="_blank" rel="noopener noreferrer">Скачать</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function setupSearch() {
+      const searchInput = document.getElementById('search');
+      searchInput.addEventListener('input', async () => {
+        const query = searchInput.value.toLowerCase().trim();
+        try {
+          const response = await fetch('programs.json');
+          const programs = await response.json();
+          const filtered = programs.filter(p =>
+            p.title.toLowerCase().includes(query) ||
+            p.description.toLowerCase().includes(query)
+          );
+          renderPrograms(filtered);
+        } catch (err) {
+          console.error('Ошибка поиска:', err);
+        }
+      });
+    }
+
+    loadPrograms();
+    setupSearch();
+  </script>
+</body>
+</html>
